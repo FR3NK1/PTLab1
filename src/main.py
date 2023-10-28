@@ -5,6 +5,7 @@ import sys
 from DataReader import DataReader
 
 from CalcRating import CalcRating
+from CalcDebts import CalcDebts
 from TextDataReader import TextDataReader
 from XmlDataReader import XmlDataReader
 
@@ -38,6 +39,9 @@ def main():
 
     rating = CalcRating(students).calc()
     print("Rating: ", rating)
+
+    debts = CalcDebts(students).calc()
+    print("Debts:", debts)
 
 
 if __name__ == "__main__":
