@@ -17,15 +17,17 @@ def get_path_from_arguments(args) -> str:
     args = parser.parse_args(args)
     return args.path
 
+
 def get_reader(path: str) -> DataReader:
-    file_extension = path.split('.')[-1]
+    file_extension = path.split(".")[-1]
     print(file_extension)
-    if file_extension == 'txt':
+    if file_extension == "txt":
         return TextDataReader()
-    elif file_extension == 'xml':
+    elif file_extension == "xml":
         return XmlDataReader()
     else:
-        raise ValueError("Расширение файла не поддерживается") 
+        raise ValueError("Расширение файла не поддерживается")
+
 
 def main():
     path = get_path_from_arguments(sys.argv[1:])
